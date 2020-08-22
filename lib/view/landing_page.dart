@@ -1,8 +1,8 @@
-import 'package:cake/view/registration.dart';
+import 'package:cake/view/widget/registration.dart';
 import 'package:cake/view/widget/image_assets.dart';
 import 'package:flutter/material.dart';
 
-import 'login.dart';
+import 'widget/login.dart';
 
 class AppsLanding extends StatelessWidget {
   @override
@@ -18,11 +18,11 @@ class AppsLanding extends StatelessWidget {
             ),
             FlatButton(
                 onPressed: () {
-                   Navigator.of(context).push(
-                        MaterialPageRoute(
-                            fullscreenDialog: true,
-                            builder: (BuildContext context) => Login_View()),
-                      );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                        fullscreenDialog: true,
+                        builder: (BuildContext context) => Login_View()),
+                  );
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -47,7 +47,8 @@ class AppsLanding extends StatelessWidget {
                       Navigator.of(context).push(
                         MaterialPageRoute(
                             fullscreenDialog: true,
-                            builder: (BuildContext context) => Registration_View()),
+                            builder: (BuildContext context) =>
+                                Registration_View()),
                       );
                     },
                     child: Text(

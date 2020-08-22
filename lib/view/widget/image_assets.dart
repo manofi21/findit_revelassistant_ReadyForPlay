@@ -15,9 +15,16 @@ String account = "assets/Akun.png";
 String home = "assets/Beranda.png";
 String notif = "assets/Notifikasi lonceng";
 
+String complete_logo = "assets/Regis selesai.svg";
+
 Container get account_icon => Container(
       decoration:
           BoxDecoration(image: DecorationImage(image: AssetImage(account))),
+    );
+
+SvgPicture get complete_icon => SvgPicture.asset(
+      complete_logo,
+      width: 225,
     );
 
 DecorationImage get background_png =>
@@ -30,7 +37,7 @@ Container get home_icon => Container(
 
 Container get notif_icon => Container(
       decoration:
-          BoxDecoration(image: DecorationImage(image: AssetImage(account))),
+          BoxDecoration(image: DecorationImage(image: AssetImage(notif))),
     );
 
 Image get logoFull => Image.asset(

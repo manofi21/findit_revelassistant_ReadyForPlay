@@ -1,9 +1,11 @@
-import 'package:cake/view/registration.dart';
+import 'package:cake/view/widget/complete.dart';
+import 'package:cake/view/widget/registration.dart';
 import 'package:cake/view/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'provider/provider.dart';
+import 'view/widget/login.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -19,16 +21,16 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => AppProvider(),
       child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
 //        home: BottomTabbar()
-        home: Scaffold(
-          // body: SplashScreenView(),
-          body: Registration_View(),
-        )),
+          home: Scaffold(
+            body: SplashScreenView(),
+            // body: CompletePage(),
+          )),
     );
   }
 }

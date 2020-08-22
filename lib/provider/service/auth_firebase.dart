@@ -11,11 +11,12 @@ class FirebaseAuthnetication {
     return user;
   }
 
-  Future<bool> signUp(String email, String password) async {
+  Future<String> signUp(String email, String password) async {
     AuthResult result = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
     FirebaseUser user = result.user;
-    return (user.uid != null) ? true : false;
+    print(user.uid);
+    return (user.uid); //!= null) ? true : false;
   }
 
   Future<bool> isLoggedIn() async {

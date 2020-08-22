@@ -1,3 +1,4 @@
+import 'package:cake/view/text_ai.dart';
 import 'package:flutter/material.dart';
 
 import 'widget/image_assets.dart';
@@ -148,27 +149,38 @@ class _Profile_ViewState extends State<Profile_View> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(13)),
-                            color: Colors.grey[300],
-                          ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  fullscreenDialog: true,
+                                  builder: (BuildContext context) =>
+                                      SecretaryAI()),
+                            );
+                            // SecretaryAI
+                          },
                           child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 8, vertical: 19),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                message_icon,
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  "Kirim Pesan",
-                                  style: TextStyle(fontSize: 13),
-                                )
-                              ],
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(13)),
+                              color: Colors.grey[300],
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 19),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  message_icon,
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text(
+                                    "Kirim Pesan",
+                                    style: TextStyle(fontSize: 13),
+                                  )
+                                ],
+                              ),
                             ),
                           ),
                         ),

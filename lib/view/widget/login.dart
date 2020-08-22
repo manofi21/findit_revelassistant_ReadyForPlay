@@ -1,26 +1,24 @@
+import 'package:cake/home.dart';
 import 'package:cake/provider/service/auth_firebase.dart';
 import 'package:cake/provider/service/service.dart';
-import 'package:cake/view/login.dart';
+import 'package:cake/view/home.dart';
+import 'package:cake/view/widget/registration.dart';
+import 'package:cake/view/widget/image_assets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../home.dart';
-
-class Registration_View extends StatelessWidget {
+class Login_View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    TextEditingController nameController = TextEditingController();
-    TextEditingController phoneNumberController = TextEditingController();
-    TextEditingController nameBusinessController = TextEditingController();
-    TextEditingController phoneBusinessController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
-    return Scaffold(
-      body: ListView(
+    return Material(
+      child: ListView(
         children: [
           Container(
             child: Center(
               child: ListTile(
-                title: Text("Registrasi",
+                title: Text("Masuk",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -37,12 +35,13 @@ class Registration_View extends StatelessWidget {
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 25),
+            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 13),
             margin: EdgeInsets.only(
               left: 15,
               right: 15,
             ),
             decoration: BoxDecoration(
+              image: background_png,
               borderRadius: const BorderRadius.all(Radius.circular(7)),
               boxShadow: [
                 BoxShadow(
@@ -65,71 +64,11 @@ class Registration_View extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text("Name",
+                      child: Text("Alamat Surel",
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
-                      margin: EdgeInsets.symmetric(vertical: 6),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.grey[300],
-                      ),
-                      child: TextFormField(
-                        controller: nameController,
-                        decoration: InputDecoration(border: InputBorder.none),
-                      ),
-                    ),
-                    Container(
-                      child: Text("Nomor Telepon",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 6),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.grey[300],
-                      ),
-                      child: TextFormField(
-                        controller: phoneNumberController,
-                        decoration: InputDecoration(border: InputBorder.none),
-                      ),
-                    ),
-                    Container(
-                      child: Text("Name Bisnis",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 6),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.grey[300],
-                      ),
-                      child: TextFormField(
-                        controller: nameBusinessController,
-                        decoration: InputDecoration(border: InputBorder.none),
-                      ),
-                    ),
-                    Container(
-                      child: Text("Nomor Telepon Bisnis",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 6),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(10)),
-                        color: Colors.grey[300],
-                      ),
-                      child: TextFormField(
-                        controller: phoneBusinessController,
-                        decoration: InputDecoration(border: InputBorder.none),
-                      ),
-                    ),
-                    Container(
-                      child: Text("Alamat Email",
-                          style: TextStyle(fontWeight: FontWeight.bold)),
-                    ),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -145,7 +84,7 @@ class Registration_View extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
-                      padding: EdgeInsets.symmetric(horizontal: 8),
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -156,7 +95,7 @@ class Registration_View extends StatelessWidget {
                         controller: passwordController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
-                    )
+                    ),
                   ],
                 ),
                 SizedBox(
@@ -170,21 +109,21 @@ class Registration_View extends StatelessWidget {
                         onPressed: () async {
                           FirebaseAuthnetication auth =
                               FirebaseAuthnetication();
-                          bool userFirebase = await auth.signUp(
+                          FirebaseUser userFirebase = await auth.signIn(
                               emailController.text, passwordController.text);
-                          String user = userFirebase
-                              ? "Selamat! Kamu Sudah Bisa Login"
-                              : "Maaf ada kesalahan. Silahkan coba regis password/ email lain";
+                          String user = (userFirebase.uid != null)
+                              ? "Halo !! ${userFirebase.displayName}"
+                              : "Maaf ada kesalahan. Silahkan coba login dengan password/ email lain";
                           showDialog(
                                   context: context,
                                   builder: (BuildContext context) =>
                                       modalDialogItem(context, user))
-                              .then((_) => userFirebase
+                              .then((_) => (userFirebase.uid != null)
                                   ? Navigator.of(context).push(
                                       MaterialPageRoute(
                                           fullscreenDialog: true,
                                           builder: (BuildContext context) =>
-                                              Login_View()),
+                                              BottomTabbar()),
                                     )
                                   : Navigator.pop(context));
                         },
@@ -196,7 +135,7 @@ class Registration_View extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 30, vertical: 15),
                           child: Text(
-                            "Simpan",
+                            "Masuk",
                             style: TextStyle(color: Colors.white),
                           ),
                         ))
@@ -205,13 +144,30 @@ class Registration_View extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 14,
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text("belum punya akun? "),
+              InkWell(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                          fullscreenDialog: true,
+                          builder: (BuildContext context) =>
+                              Registration_View()),
+                    );
+                  },
+                  child: Text(
+                    "Daftar Aja",
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ))
+            ],
+          )
         ],
       ),
     );
   }
 }
-
-// Navigator.push(
-//   context,
-//   MaterialPageRoute(builder: (context) => SecondRoute()),
-// );
