@@ -2,6 +2,8 @@ import 'package:cake/view/registration.dart';
 import 'package:cake/view/widget/image_assets.dart';
 import 'package:flutter/material.dart';
 
+import 'login.dart';
+
 class AppsLanding extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,13 @@ class AppsLanding extends StatelessWidget {
               height: 25,
             ),
             FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                   Navigator.of(context).push(
+                        MaterialPageRoute(
+                            fullscreenDialog: true,
+                            builder: (BuildContext context) => Login_View()),
+                      );
+                },
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),

@@ -1,15 +1,20 @@
+import 'package:cake/provider/service/auth_firebase.dart';
+import 'package:cake/view/widget/image_assets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class Login_View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
     return Material(
       child: ListView(
         children: [
           Container(
             child: Center(
               child: ListTile(
-                title: Text("Login",
+                title: Text("Masuk",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.w600,
@@ -32,6 +37,7 @@ class Login_View extends StatelessWidget {
               right: 15,
             ),
             decoration: BoxDecoration(
+              image: background_png,
               borderRadius: const BorderRadius.all(Radius.circular(7)),
               boxShadow: [
                 BoxShadow(
@@ -54,30 +60,35 @@ class Login_View extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Container(
-                      child: Text("Name",
+                      child: Text("Alamat Surel",
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
                     Container(
-                      child: Text("Nomor Telepon",
+                      child: Text("Kata Sandi",
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        obscureText: true,
+                        controller: passwordController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -91,7 +102,13 @@ class Login_View extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FlatButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          FirebaseAuthnetication auth =
+                              FirebaseAuthnetication();
+                          FirebaseUser userFirebase = await auth.signIn(
+                              emailController.text, passwordController.text);
+                          print(userFirebase.email);
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
@@ -100,7 +117,7 @@ class Login_View extends StatelessWidget {
                           padding: EdgeInsets.symmetric(
                               horizontal: 30, vertical: 15),
                           child: Text(
-                            "Simpan",
+                            "Masuk",
                             style: TextStyle(color: Colors.white),
                           ),
                         ))

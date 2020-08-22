@@ -1,4 +1,6 @@
+import 'package:cake/provider/service/auth_firebase.dart';
 import 'package:cake/provider/service/service.dart';
+import 'package:cake/view/login.dart';
 import 'package:flutter/material.dart';
 
 import '../home.dart';
@@ -6,8 +8,14 @@ import '../home.dart';
 class Registration_View extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: ListView(
+    TextEditingController nameController = TextEditingController();
+    TextEditingController phoneNumberController = TextEditingController();
+    TextEditingController nameBusinessController = TextEditingController();
+    TextEditingController phoneBusinessController = TextEditingController();
+    TextEditingController emailController = TextEditingController();
+    TextEditingController passwordController = TextEditingController();
+    return Scaffold(
+      body: ListView(
         children: [
           Container(
             child: Center(
@@ -67,6 +75,7 @@ class Registration_View extends StatelessWidget {
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: nameController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -81,6 +90,7 @@ class Registration_View extends StatelessWidget {
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: phoneNumberController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -95,6 +105,7 @@ class Registration_View extends StatelessWidget {
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: nameBusinessController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -109,6 +120,7 @@ class Registration_View extends StatelessWidget {
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: phoneBusinessController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -117,12 +129,14 @@ class Registration_View extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     ),
@@ -131,12 +145,15 @@ class Registration_View extends StatelessWidget {
                           style: TextStyle(fontWeight: FontWeight.bold)),
                     ),
                     Container(
+                      padding: EdgeInsets.symmetric(horizontal: 8),
                       margin: EdgeInsets.symmetric(vertical: 6),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(10)),
                         color: Colors.grey[300],
                       ),
                       child: TextFormField(
+                        obscureText: true,
+                        controller: passwordController,
                         decoration: InputDecoration(border: InputBorder.none),
                       ),
                     )
@@ -150,8 +167,26 @@ class Registration_View extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     FlatButton(
-                        onPressed: () {
-                          modalDialogItem(context, "Kamu Sudah Bisa Login");
+                        onPressed: () async {
+                          FirebaseAuthnetication auth =
+                              FirebaseAuthnetication();
+                          bool userFirebase = await auth.signUp(
+                              emailController.text, passwordController.text);
+                          String user = userFirebase
+                              ? "Selamat! Kamu Sudah Bisa Login"
+                              : "Maaf ada kesalahan. Silahkan coba regis password/ email lain";
+                          showDialog(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      modalDialogItem(context, user))
+                              .then((_) => userFirebase
+                                  ? Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          fullscreenDialog: true,
+                                          builder: (BuildContext context) =>
+                                              Login_View()),
+                                    )
+                                  : Navigator.pop(context));
                         },
                         child: Container(
                           decoration: BoxDecoration(

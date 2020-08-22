@@ -1,3 +1,4 @@
+import 'package:cake/view/registration.dart';
 import 'package:cake/view/splashscreen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
         ),
 //        home: BottomTabbar()
         home: Scaffold(
-          body: SplashScreenView(),
+          // body: SplashScreenView(),
+          body: Registration_View(),
         )),
     );
   }
