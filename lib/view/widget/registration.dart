@@ -1,8 +1,11 @@
+import 'package:cake/provider/provider.dart';
 import 'package:cake/provider/service/auth_firebase.dart';
 import 'package:cake/provider/service/service.dart';
 import 'package:cake/view/widget/complete.dart';
 import 'package:cake/view/widget/login.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:provider/provider.dart';
 
 import '../../home.dart';
 
@@ -15,6 +18,11 @@ class Registration_View extends StatelessWidget {
     TextEditingController phoneBusinessController = TextEditingController();
     TextEditingController emailController = TextEditingController();
     TextEditingController passwordController = TextEditingController();
+
+    // FirebaseDatabase database = new FirebaseDatabase();
+    DatabaseReference _userRef =
+        FirebaseDatabase.instance.reference().child("user");
+
     return Scaffold(
       body: ListView(
         children: [
@@ -171,40 +179,66 @@ class Registration_View extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FlatButton(
-                        onPressed: () async {
-                          String userFirebase;
-                          FirebaseAuthnetication auth =
-                              FirebaseAuthnetication();
-                          try {
-                            userFirebase = await auth.signUp(
-                                emailController.text, passwordController.text);
-                          } catch (e) {
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) =>
-                                    modalDialogItem(context, e.toString()));
-                            print(e.toString());
-                          }
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                fullscreenDialog: true,
-                                builder: (BuildContext context) =>
-                                    CompletePage()),
-                          );
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.blue,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          child: Text(
-                            "Simpan",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ))
+                    // dbRef.orderByChild("age").equalTo("4").once(),
+                    Consumer<AppProvider>(
+                      builder: (context, providers, _) {
+                        return FlatButton(
+                            onPressed: () async {
+                              String userFirebase;
+                              FirebaseAuthnetication auth =
+                                  FirebaseAuthnetication();
+
+                              try {
+                                userFirebase = await auth.signUp(
+                                    emailController.text,
+                                    passwordController.text);
+                              } catch (e) {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        modalDialogItem(context, e.toString()));
+                                print(e.toString());
+                              }
+
+                              try {
+                                _userRef.push().set(<String, String>{
+                                  "name": nameController.text,
+                                  "phone_number": phoneNumberController.text,
+                                  "email": emailController.text,
+                                  "bussiness_phone":
+                                      phoneBusinessController.text,
+                                  "bussiness_name": nameBusinessController.text
+                                });
+                              } catch (e) {
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        modalDialogItem(context, e.toString()));
+                                print(e.toString());
+                              }
+                              providers.usernameProvider = nameController.text;
+                              // _userRef.orderByChild("email").equalTo("4").once();
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
+                                    fullscreenDialog: true,
+                                    builder: (BuildContext context) =>
+                                        CompletePage()),
+                              );
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.blue,
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: Text(
+                                "Simpan",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ));
+                      },
+                    )
                   ],
                 ),
               ],

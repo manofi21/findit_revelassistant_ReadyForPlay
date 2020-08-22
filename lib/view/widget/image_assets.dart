@@ -13,9 +13,10 @@ String landing_logo = "assets/image login.png";
 
 String account = "assets/Akun.png";
 String home = "assets/Beranda.png";
-String notif = "assets/Notifikasi lonceng";
+String notif = "assets/Notifikasi_lonceng.png";
 
 String complete_logo = "assets/Regis selesai.svg";
+String end_call_logo = "assets/Akhiri_Panggilan.svg";
 
 Container get account_icon => Container(
       decoration:
@@ -24,6 +25,11 @@ Container get account_icon => Container(
 
 SvgPicture get complete_icon => SvgPicture.asset(
       complete_logo,
+      width: 225,
+    );
+
+SvgPicture get end_call => SvgPicture.asset(
+      end_call_logo,
       width: 225,
     );
 
@@ -38,6 +44,11 @@ Container get home_icon => Container(
 Container get notif_icon => Container(
       decoration:
           BoxDecoration(image: DecorationImage(image: AssetImage(notif))),
+    );
+
+Container get profile_icon => Container(
+      decoration:
+          BoxDecoration(image: DecorationImage(image: AssetImage(account))),
     );
 
 Image get logoFull => Image.asset(
@@ -58,6 +69,12 @@ SvgPicture get smallLogo => SvgPicture.asset(
       logo_full,
       height: 18,
       width: 20,
+    );
+
+SvgPicture get littleBigLogo => SvgPicture.asset(
+      logo_full,
+      // height: 18,
+      width: 30,
     );
 
 SvgPicture get telp_icon => SvgPicture.asset(

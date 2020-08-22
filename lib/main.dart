@@ -1,3 +1,4 @@
+import 'package:cake/view/text_ai.dart';
 import 'package:cake/view/widget/complete.dart';
 import 'package:cake/view/widget/registration.dart';
 import 'package:cake/view/splashscreen.dart';
@@ -28,8 +29,10 @@ class MyApp extends StatelessWidget {
           ),
 //        home: BottomTabbar()
           home: Scaffold(
+            // body: SplashScreenView(),
+            // body: Login_View(),
             body: SplashScreenView(),
-            // body: CompletePage(),
+            // body: SecretaryAI(),
           )),
     );
   }

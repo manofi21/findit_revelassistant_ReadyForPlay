@@ -1,11 +1,14 @@
 import 'package:cake/home.dart';
+import 'package:cake/provider/provider.dart';
 import 'package:cake/provider/service/auth_firebase.dart';
 import 'package:cake/provider/service/service.dart';
 import 'package:cake/view/home.dart';
 import 'package:cake/view/widget/registration.dart';
 import 'package:cake/view/widget/image_assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class Login_View extends StatelessWidget {
   @override
@@ -105,40 +108,57 @@ class Login_View extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    FlatButton(
-                        onPressed: () async {
-                          FirebaseAuthnetication auth =
-                              FirebaseAuthnetication();
-                          FirebaseUser userFirebase = await auth.signIn(
-                              emailController.text, passwordController.text);
-                          String user = (userFirebase.uid != null)
-                              ? "Halo !! ${userFirebase.displayName}"
-                              : "Maaf ada kesalahan. Silahkan coba login dengan password/ email lain";
-                          showDialog(
-                                  context: context,
-                                  builder: (BuildContext context) =>
-                                      modalDialogItem(context, user))
-                              .then((_) => (userFirebase.uid != null)
-                                  ? Navigator.of(context).push(
-                                      MaterialPageRoute(
-                                          fullscreenDialog: true,
-                                          builder: (BuildContext context) =>
-                                              BottomTabbar()),
-                                    )
-                                  : Navigator.pop(context));
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.blue,
-                          ),
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 30, vertical: 15),
-                          child: Text(
-                            "Masuk",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ))
+                    Consumer<AppProvider>(
+                      builder: (context, providers, _) {
+                        return FlatButton(
+                            onPressed: () async {
+                              FirebaseAuthnetication auth =
+                                  FirebaseAuthnetication();
+                              FirebaseUser userFirebase = await auth.signIn(
+                                  emailController.text,
+                                  passwordController.text);
+                              DatabaseReference _userRef = FirebaseDatabase
+                                  .instance
+                                  .reference()
+                                  .child("user");
+                              DataSnapshot user_fill = await _userRef
+                                  .orderByChild("email")
+                                  .equalTo(emailController.text)
+                                  .once();
+                              Map<dynamic, dynamic> values = user_fill.value;
+                              providers.usernameProvider =
+                                  values.values.elementAt(0)["name"];
+
+                              String user = (userFirebase.uid != null)
+                                  ? "Halo !! ${providers.usernameProvider}"
+                                  : "Maaf ada kesalahan. Silahkan coba login dengan password/ email lain";
+                              showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) =>
+                                          modalDialogItem(context, user))
+                                  .then((_) => (userFirebase.uid != null)
+                                      ? Navigator.of(context).push(
+                                          MaterialPageRoute(
+                                              fullscreenDialog: true,
+                                              builder: (BuildContext context) =>
+                                                  BottomTabbar()),
+                                        )
+                                      : Navigator.pop(context));
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.blue,
+                              ),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 30, vertical: 15),
+                              child: Text(
+                                "Masuk",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                            ));
+                      },
+                    )
                   ],
                 ),
               ],

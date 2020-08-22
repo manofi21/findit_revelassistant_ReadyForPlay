@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 
 class AppProvider with ChangeNotifier {
+  String username;
+  String get usernameProvider => username;
+  set usernameProvider(String strings) {
+    this.username = strings;
+    ChangeNotifier();
+  }
+
   List<String> get list_string => ["Monday", "Tuesday", "Wednesday"];
   List<String> get list_string2 => ["Monday", "Tuesday", "Wednesday"];
   final toDate = DateTime.now();

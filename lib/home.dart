@@ -27,7 +27,7 @@ class _BottomTabbarState extends State<BottomTabbar>
       // child: Text("Beranda"),
     ),
     Tab(
-      icon: notif_icon,
+      icon: profile_icon,
       // child: Text("Akun"),
     ),
   ];

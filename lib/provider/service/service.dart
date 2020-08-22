@@ -40,15 +40,20 @@ AlertDialog modalDialogItem(BuildContext context, String messages) {
           child: Text(messages),
         )),
     actions: [
-      Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Colors.blue,
-        ),
-        padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-        child: Text(
-          "kembali",
-          style: TextStyle(color: Colors.black),
+      InkWell(
+        onTap: () {
+          Navigator.pop(context);
+        },
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            color: Colors.blue,
+          ),
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+          child: Text(
+            "kembali",
+            style: TextStyle(color: Colors.black),
+          ),
         ),
       )
     ],

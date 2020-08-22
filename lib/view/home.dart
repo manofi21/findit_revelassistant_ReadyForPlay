@@ -1,5 +1,6 @@
 import 'package:cake/view/widget/diagram.dart';
 import 'package:flutter/material.dart';
+import 'add_metrik.dart';
 import 'widget/home_widget.dart';
 
 class Home extends StatelessWidget {
@@ -25,7 +26,9 @@ class Home extends StatelessWidget {
                         color: Colors.white,
                       ),
                       onPressed: () {
-                        print("object");
+                        Navigator.of(context).push(MaterialPageRoute(
+                            fullscreenDialog: true,
+                            builder: (BuildContext context) => Metrik_View()));
                       }),
                 ),
               ),
@@ -37,11 +40,12 @@ class Home extends StatelessWidget {
             ),
             diagramPrediction(),
             Container(
-              decoration: BoxDecoration(
-                // image: DecorationImage(
-                //   image: AssetImage(assetName))
-              ),
-              margin: EdgeInsets.only(top: 450), child: laba_diagram()),
+                decoration: BoxDecoration(
+                    // image: DecorationImage(
+                    //   image: AssetImage(assetName))
+                    ),
+                margin: EdgeInsets.only(top: 450),
+                child: laba_diagram()),
             Container(
                 margin: EdgeInsets.only(top: 1060), child: PieChartSample2()),
             Container(

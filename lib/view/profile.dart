@@ -1,6 +1,10 @@
+import 'package:cake/provider/provider.dart';
 import 'package:cake/view/text_ai.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import 'edit_data.dart';
+import 'widget/call_page.dart';
 import 'widget/image_assets.dart';
 
 class Profile_View extends StatefulWidget {
@@ -16,11 +20,13 @@ class _Profile_ViewState extends State<Profile_View> {
         Container(
           child: Center(
             child: ListTile(
-              title: Text("Beranda",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 28)),
+              title: Consumer<AppProvider>(builder: (context, providers, _) {
+                return Text("Halo ${providers.usernameProvider}",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 28));
+              }),
               subtitle: Text("Selamat Pagi",
                   style: TextStyle(
                       color: Colors.white,
@@ -184,23 +190,34 @@ class _Profile_ViewState extends State<Profile_View> {
                             ),
                           ),
                         ),
-                        Container(
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                const BorderRadius.all(Radius.circular(13)),
-                            color: Colors.grey[300],
-                          ),
+                        InkWell(
+                          onTap: () {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  fullscreenDialog: true,
+                                  builder: (BuildContext context) =>
+                                      Call_View()),
+                            );
+                            // Call_View
+                          },
                           child: Container(
-                            padding: EdgeInsets.all(18),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                telp_icon,
-                                SizedBox(
-                                  height: 10,
-                                ),
-                                Text("Telepon")
-                              ],
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(13)),
+                              color: Colors.grey[300],
+                            ),
+                            child: Container(
+                              padding: EdgeInsets.all(18),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  telp_icon,
+                                  SizedBox(
+                                    height: 10,
+                                  ),
+                                  Text("Telepon")
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -220,13 +237,22 @@ class _Profile_ViewState extends State<Profile_View> {
             borderRadius: const BorderRadius.all(Radius.circular(13)),
             color: Colors.white,
           ),
-          child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: ListTile(
-                title: Text("Ubah Data",
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                trailing: Icon(Icons.arrow_forward_ios),
-              )),
+          child: InkWell(
+            onTap: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                    fullscreenDialog: true,
+                    builder: (BuildContext context) => EditData_View()),
+              );
+            },
+            child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 8),
+                child: ListTile(
+                  title: Text("Ubah Data",
+                      style: TextStyle(fontWeight: FontWeight.bold)),
+                  trailing: Icon(Icons.arrow_forward_ios),
+                )),
+          ),
         ),
       ],
     );
