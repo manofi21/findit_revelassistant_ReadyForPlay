@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="146" height="133" viewBox="0 0 146 133">
+  <defs>
+    <filter id="Rectangle_55" x="0" y="0" width="146" height="133" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Hasil_on_chat" data-name="Hasil on chat" transform="translate(-68 -135)">
+    <g transform="matrix(1, 0, 0, 1, 68, 135)" filter="url(#Rectangle_55)">
+      <rect id="Rectangle_55-2" data-name="Rectangle 55" width="146" height="133" rx="10" fill="#fff"/>
+    </g>
+    <text id="Prediksi" transform="translate(75 147)" fill="#15135b" font-size="6" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Prediksi</tspan></text>
+    <rect id="Rectangle_56" data-name="Rectangle 56" width="24" height="8" rx="4" transform="translate(182 141)" fill="#f9f9f9"/>
+    <g id="Group_2868" data-name="Group 2868" transform="translate(105.079 188.765)">
+      <text id="_25" data-name="25" transform="translate(4.921 5.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">25</tspan></text>
+      <text id="Maret" transform="translate(-0.079 11.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Maret</tspan></text>
+    </g>
+    <g id="Group_2869" data-name="Group 2869" transform="translate(162.552 188.765)">
+      <text id="_27" data-name="27" transform="translate(4.448 5.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">27</tspan></text>
+      <text id="Maret-2" data-name="Maret" transform="translate(0.448 11.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Maret</tspan></text>
+    </g>
+    <g id="Group_2870" data-name="Group 2870" transform="translate(191.289 188.765)">
+      <text id="_28" data-name="28" transform="translate(4.711 5.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">28</tspan></text>
+      <text id="Maret-3" data-name="Maret" transform="translate(-0.289 11.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Maret</tspan></text>
+    </g>
+    <g id="Group_2871" data-name="Group 2871" transform="translate(76.343 188.765)">
+      <text id="_24" data-name="24" transform="translate(4.657 5.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">24</tspan></text>
+      <text id="Maret-4" data-name="Maret" transform="translate(-0.343 11.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Maret</tspan></text>
+    </g>
+    <rect id="Rectangle_57" data-name="Rectangle 57" width="35" height="58" rx="6" transform="translate(123 149)" fill="#f9f9f9"/>
+    <g id="Group_2872" data-name="Group 2872" transform="translate(225.746 224.99) rotate(90)">
+      <g id="Ellipse_131" data-name="Ellipse 131" transform="translate(0.01 19.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+      <g id="Ellipse_132" data-name="Ellipse 132" transform="translate(0.01 22.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+      <g id="Ellipse_158" data-name="Ellipse 158" transform="translate(0.01 25.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+    </g>
+    <path id="Back" d="M.3,0A.366.366,0,0,1,.5.118Q2.34,1.961,4.184,3.805a.268.268,0,0,1,0,.426Q2.334,6.082.482,7.93a.274.274,0,0,1-.4.033A.28.28,0,0,1,.1,7.557c.092-.1.191-.194.288-.29Q1.953,5.7,3.522,4.137c.1-.1.092-.147,0-.241Q1.825,2.213.139.522A.355.355,0,0,1,0,.254.273.273,0,0,1,.3,0Z" transform="translate(79.892 227.12) rotate(-90)" fill="#ffb167" stroke="#ffb167" stroke-width="1"/>
+    <g id="Group_2873" data-name="Group 2873" transform="translate(98.59 216.111)">
+      <text id="Penghasilan" transform="translate(0.41 15.889)" fill="#666594" font-size="5" font-family="Calibri"><tspan x="0" y="0">Penghasilan</tspan></text>
+      <text id="Rp500.000_00" data-name="Rp500.000,00" transform="translate(0.41 4.889)" fill="#487cfa" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Rp500.000,00</tspan></text>
+    </g>
+    <path id="Back-2" data-name="Back" d="M.3,0A.366.366,0,0,1,.5.118Q2.34,1.961,4.184,3.805a.268.268,0,0,1,0,.426Q2.334,6.082.482,7.93a.274.274,0,0,1-.4.033A.28.28,0,0,1,.1,7.557c.092-.1.191-.194.288-.29Q1.953,5.7,3.522,4.137c.1-.1.092-.147,0-.241Q1.825,2.213.139.522A.355.355,0,0,1,0,.254.273.273,0,0,1,.3,0Z" transform="translate(87.93 247.397) rotate(90)" fill="#ed716b" stroke="#ed716b" stroke-width="1"/>
+    <g id="Group_2875" data-name="Group 2875" transform="translate(98.59 240.676)">
+      <text id="Pengeluaran_Operasi" data-name="Pengeluaran Operasi" transform="translate(0.41 16.324)" fill="#666594" font-size="5" font-family="Calibri"><tspan x="0" y="0">Pengeluaran Operasi</tspan></text>
+      <text id="Rp100.000_00" data-name="Rp100.000,00" transform="translate(0.41 5.324)" fill="#487cfa" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Rp100.000,00</tspan></text>
+    </g>
+    <g id="Group_2876" data-name="Group 2876" transform="translate(74.952 165.127)" opacity="0.3">
+      <ellipse id="Ellipse_152" data-name="Ellipse 152" cx="5.5" cy="5" rx="5.5" ry="5" transform="translate(121.048 92.873)" fill="#ffb167" opacity="0.25"/>
+      <circle id="Ellipse_153" data-name="Ellipse 153" cx="4" cy="4" r="4" transform="translate(92.048 91.873)" fill="#ed716b" opacity="0.25"/>
+      <circle id="Ellipse_154" data-name="Ellipse 154" cx="4.5" cy="4.5" r="4.5" transform="translate(46.048 83.873)" fill="#487cfa" opacity="0.25"/>
+      <circle id="Ellipse_155" data-name="Ellipse 155" cx="2" cy="2" r="2" transform="translate(0.048 89.873)" fill="#0038b2" opacity="0.25"/>
+      <circle id="Ellipse_156" data-name="Ellipse 156" cx="4" cy="4" r="4" transform="translate(110.048 -0.127)" fill="#666594" opacity="0.25"/>
+    </g>
+    <text id="Hari" transform="translate(185 146)" fill="#666594" font-size="4" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Hari</tspan></text>
+    <path id="Back-3" data-name="Back" d="M.123,0A.15.15,0,0,1,.2.048L1.711,1.556a.11.11,0,0,1,0,.174L.2,3.243a.112.112,0,0,1-.165.014A.114.114,0,0,1,.04,3.091c.038-.041.078-.079.118-.119Q.8,2.331,1.44,1.692c.041-.041.037-.06,0-.1Q.746.905.057.213A.145.145,0,0,1,0,.1.112.112,0,0,1,.123,0Z" transform="translate(203.224 144.502) rotate(90)" fill="none" stroke="#666594" stroke-width="0.7"/>
+    <text id="Rp100.000_00-2" data-name="Rp100.000,00" transform="translate(129 159)" fill="#666594" font-size="4" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Rp100.000,00</tspan></text>
+    <g id="Group_2877" data-name="Group 2877" transform="translate(133.816 188.765)">
+      <text id="_26" data-name="26" transform="translate(4.184 5.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">26</tspan></text>
+      <text id="Maret-5" data-name="Maret" transform="translate(0.184 11.235)" fill="#666594" font-size="5" font-family="Calibri-Bold, Calibri" font-weight="700"><tspan x="0" y="0">Maret</tspan></text>
+    </g>
+    <path id="Path_7592" data-name="Path 7592" d="M-118.9,2559.3s-8.575-.6-17.844,15.806-12.938,1.41-20.625-8.622-16.917,20.162-27.346,8.622-9.5-.742-21.321-13.72S-235,2581.776-235,2581.776" transform="translate(318.759 -2398.11)" fill="none" stroke="#487cfa" stroke-linecap="round" stroke-width="1"/>
+    <g id="Group_2880" data-name="Group 2880" transform="translate(225.746 248.99) rotate(90)">
+      <g id="Ellipse_131-2" data-name="Ellipse 131" transform="translate(0.01 19.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+      <g id="Ellipse_132-2" data-name="Ellipse 132" transform="translate(0.01 22.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+      <g id="Ellipse_158-2" data-name="Ellipse 158" transform="translate(0.01 25.746)" fill="none" stroke="#666594" stroke-width="0.5">
+        <circle cx="1" cy="1" r="1" stroke="none"/>
+        <circle cx="1" cy="1" r="0.75" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>
