@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cupcakesbot-eisa",
+  "private_key_id": "fd5cf9cc2051abca20f5f98aa89244c51745e41c",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCvur5zfXZQJVuu\noMOTZHtPKbjexyiquMEv3rolsqurP5yH8eovFGMvRUQ5GVigc0TVR+4I7kdIXE8J\nGUF2u7kKUqqo8fl13k4aZtro6Ih+4P1l5bC3SjOB8JFjeFgQxV+kBi1Tdrc/H/w9\noIkQymmCw9iHa7SDEc24uVRjlOxwH0tbNiRHfuU1iICZirZRQudN+O612pqqyNCA\nd3ipC0LAHch8k4/2VUa21Gz4psK74uHinlPUBc0Sn4fejdFGRudSv6b07EFycjTe\nNJJ6CPSpwR3YkZ6Gx3S3jYKALbJYe0LASUazH6tE60Ci/XGlRphCFPrX7GRB9yAf\niz62KWsNAgMBAAECggEARHt+JPvL08f7Rr6X+SS7eUpFJWxvyLhfcQxXdsF+bSpJ\nEiGQpfBIBu/zel0KUN0bAhMaDJjvZp+ynVUeUesuXXuBzn0ePnT38woKXaHhL7D2\nj3NHvuZH1GewARexGjgQ4ZcWquQk3ZDVeB7Ly6NWIwO3qm6q1jll9osi+/vZeIfU\nG+4VfHDSsTkzPJhLyfWTBhJRtDzSdUTmz8rz5ZJUCS8VA/zMyGzGOOa9UoPSEokg\nmMlog3Oq6ICupgdugJ4BdjOz/M603IRepQ4+CAxx1Pwxr98TV5NzQ3SGmkxl6KqZ\nUnAtuhFFKY2SRSZJNMWyEcxVHx4KJRINIBLkmT7tcQKBgQDdN2L5HWEWeWfF4zm8\ncM2ueEhoaCcs5jAzRVfvkqytK+qVu9oTAwVNVdqUcdkr9kjWt3lV8kUDbFi3fVha\ncipy2+S7DlCuUrE9lLFUEJ5Ka3uuunA95oSGka+WmpKgZig/oXkZFJSkXKTLL1D5\nRNAYIgxlh23sk6tocwRtWoKbswKBgQDLXGAf8/dn/l05/hbWApqzNH+Sd2nUTq+q\n2x7bZSG+4W4IvmGDokRSAoFCzZj60qPqWjwc5+z82QopClguI0Bl/P93Ghn5aVqd\nTVANjerd3rT9IUAEYiC94sBuiOsivDt/R+8/1uzdLmmK9H1026R/+Ea9X7KygfMr\nAMONrZF+PwKBgEqcW61Z010ZJX8A3IBKK5UkzIcqWcwy9x7TzIzpE4R0w3ItIag3\n5Jno0wguPekt7/M7fpkWVWCKMoHwrNQUnWyP7d2JPn0NNupmNEj+MeU3y0dral/2\nV8xrZqWNDNc8nWaYt5dV8axd8tb05oKsSuNY2IWF3/Vi+PUJlfysAlExAoGBAJky\npuuLY7dBBUQ56UQhxB76jpxtPxmEiYvh9LX80tY0hyspGNcMeAF8B5qmvfc+leNn\nRN/VzE+SxbezJkjjn5D1bhJwZF7jAjN8WbFMV0H7k0caNFrY/adu2d6rYM/TE9NI\nArGKHPhnDXVzx8sv6BXLmKbzH/CgOusLcUYbGn8LAoGAZDp98uw3SKHAMPe2dT++\ncuGybHgwGQlrWd9gDWZ/51njCFRjRlMtyto8o0Fp8idTwm48GGAE8bxma7zNwMpz\niuevFt/xQlw9M4IWFU7CFv/rWj6V2sJ3zED2kh/huY6Ksl+K/Rdq0XLCKyu8O5rq\nKhXt5sYCI+zwnoWDFwktkF8=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-ajjlbp@cupcakesbot-eisa.iam.gserviceaccount.com",
+  "client_id": "110461435619719109291",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-ajjlbp%40cupcakesbot-eisa.iam.gserviceaccount.com"
+}
